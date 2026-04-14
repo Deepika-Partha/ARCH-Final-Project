@@ -15,6 +15,6 @@ __global__ void matmul(int *A, int *B, int *C) {
 }
 
 int main() {
-    // GPU setup omitted for brevity (you can ask me for full version)
+    
     return 0;
 }
