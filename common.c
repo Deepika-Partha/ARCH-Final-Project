@@ -13,8 +13,15 @@ void zero_matrix(int *C) {
     }
 }
 
-void print_time(struct timespec start, struct timespec end) {
-    double time = (end.tv_sec - start.tv_sec) +
-                  (end.tv_nsec - start.tv_nsec) / 1e9;
-    printf("Execution time: %f seconds\n", time);
+double elapsed_time(struct timespec start, struct timespec end) {
+    return (end.tv_sec - start.tv_sec) +
+           (end.tv_nsec - start.tv_nsec) / 1e9;
+}
+
+long long checksum_matrix(int *C) {
+    long long sum = 0;
+    for (int i = 0; i < N * N; i++) {
+        sum += C[i];
+    }
+    return sum;
 }
